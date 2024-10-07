@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarefa 1 - Desenvolvimento Web</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 50%;
+        }
+        .title {
+            background-color: #05ff01;
+            color: white;
+            padding: 10px;
+            border-radius: 8px 8px 0 0;
+        }
+        .buttons-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .button {
+            background-color: #05ff01;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 0 5px;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        .button:hover {
+            background-color: #05ff01;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div>
+            <h2>Aluno: Matheus Gonçalves - G734BC3</h2>
+            
+            <h2>TURMA: DS4R18</h2>
+        </div>
+        <div class="title">
+            <h2>Tarefa 1 - DEV WEB</h2>
+        </div>
+        <p>Tente escolher o número correto:</p>
+        <div class="buttons-container">
+            <button class="button" onclick="checkNumber(1)">1</button>
+            <button class="button" onclick="checkNumber(2)">2</button>
+            <button class="button" onclick="checkNumber(3)">3</button>
+            <button class="button" onclick="checkNumber(4)">4</button>
+            <button class="button" onclick="checkNumber(5)">5</button>
+        </div>
+        <div id="result" class="result"></div>
+    </div>
+
+    <script>
+  
+        function getRandomNumber() {
+            return Math.floor(Math.random() * 5) + 1;
+        }
+
+        function checkNumber(selectedNumber) {
+            const randomNumber = getRandomNumber();
+            const resultDiv = document.getElementById("result");
+            if (selectedNumber === randomNumber) {
+                resultDiv.textContent = `Parabéns! Você acertou! O número sorteado foi ${randomNumber}.`;
+                resultDiv.style.color = "green";
+            } else {
+                resultDiv.textContent = `Você errou. O número sorteado foi ${randomNumber}.`;
+                resultDiv.style.color = "red";
+            }
+        }
+    </script>
+</body>
+</html>
